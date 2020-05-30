@@ -1,0 +1,60 @@
+neste exemplo ele usa nodemon e sucrase
+
+neste caso o launch.
+fica dessa forma
+-----
+
+
+"configurations": [
+        {
+            "type": "node",
+            "request": "attach",
+            "protocol": "inspector",
+            "restart": true,
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+            
+        }
+    ]
+
+
+-----
+
+deve configurar no package.json
+
+----
+
+{
+  "name": "exemplodebuggingnovscode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "sucrase": "^3.15.0"
+  }
+}
+-----
+
+criar um arquivo de configuração do nodemon-> nodemon.json
+
+----
+
+{
+    "execMap": {
+        "js": "node --inspect -r sucrase/register"
+    }
+}
+
+
+---
+
+botar o break point e ver como sai

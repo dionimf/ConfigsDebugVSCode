@@ -1,0 +1,75 @@
+----configurando o debug no vscode-----
+baixar a extenssão php debug
+acessar -> https://xdebug.org/docs/install
+criar arquivo phpinfo.php
+colocar script -> phpinfo();
+para pegar informações do teu php
+
+pegar o html da pagina gerada e colar em-> https://xdebug.org/wizard
+
+dai vai dizer a versão correta do XDebug que vc deve instalar
+pra continuar deve seguir os passos da instrução que foi gerada
+no meu caso ->
+--
+Download php_xdebug-2.9.6-7.4-vc15-x86_64.dll
+Move the downloaded file to E:\xampp\php\ext
+Update E:\xampp\php\php.ini and change the line
+zend_extension = E:\xampp\php\ext\php_xdebug-2.9.6-7.4-vc15-x86_64.dll
+Restart the webserver
+--
+
+foi baixado(php_xdebug-2.9.6-7.4-vc15-x86_64.dll) -> http://xdebug.org/files/php_xdebug-2.9.6-7.4-vc15-x86_64.dll
+
+colar comandos no php.ini->
+
+-----
+[XDebug]
+xdebug.remote_enable = 1
+xdebug.remote_autostart = 1
+-----
+
+pra ver se o XDebug foi instalado corretamente verificar o phpinfo.php
+
+ele deve ter uma area com o nome XDebug
+
+---
+para casos mas complexos deve seguir a documentação da extenssão phpdebug
+---
+
+caso simplex de php
+
+criar o launcher.
+
+deletar oque não for iqual a essa configuração->
+
+-----
+
+
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9000
+        }
+    ]
+}
+
+
+
+
+----
+
+marcar o break point
+
+Run-> start-debuginng
+
+rodar a pagina que se refere ao break point
+
+--agora é só curtir o debuginng

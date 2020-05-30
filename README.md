@@ -1,0 +1,1 @@
+# seguir configurações nos txt de cada pasta exemplo
